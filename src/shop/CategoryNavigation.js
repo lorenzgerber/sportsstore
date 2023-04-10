@@ -5,8 +5,8 @@ export class CategoryNavigation extends Component {
     
     render(){
         return <React.Fragment>
-            <Link className="btn btn-secondary btn-block" to={ this.props.baseUrl }>All</Link>
-            { this.props.categories && this.props.categories.map(cat => <Link className="btn btn-secondary btn-block" key={ cat } to={ `${this.props.baseUrl}/$cat.toLower()}`}> { cat }</Link>)}
+            <Link className="btn btn-secondary form-control m-1" to={ this.props.baseUrl }>All</Link>
+            { this.props.categories && this.props.categories.map(cat => <Link className="btn btn-secondary form-control m-1" key={ cat } to={ `${this.props.baseUrl}/${cat.toLowerCase()}`}> { cat }</Link>)}
         </React.Fragment>
     }
 }
