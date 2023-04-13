@@ -5,5 +5,5 @@ export const CommonReducer = (...reducers) => (storeData, action) => {
             return newStore;
         }
     }
-    return DataStore;
+    return storeData;
 }
