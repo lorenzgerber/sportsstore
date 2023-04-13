@@ -29,5 +29,18 @@ export const CartReducer = (storeData, action) => {
                 }
             });
             return newStore;
+
+        case ActionTypes.CART_REMOVE:
+            let selection = newStore.cart.find(item => item.prouct.id === action.payload.id);
+            newStore.cartItems -= selection.quantity;
+            newStore.cartPrice -= selection.quantity * selection.product.price;
+            newStore.cart = newStore.cart.filter(item => item !== selection );
+            return newStore;
+
+        case ActionTypes.CART_CLEAR:
+            return { ...storeData, cart: [], cartItesms: 0, cartPrice: 0}
+
+        default:
+            return storeData || {};
     }
 }
