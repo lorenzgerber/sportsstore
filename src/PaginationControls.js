@@ -24,7 +24,8 @@ export class PaginationControls extends Component {
                 pageCount={this.props.pageCount}
                 navigate={ this.props.navigateToPage }/>
         </div>
-        <div className="form-inline jusify-content-center">
+        <div className="row m-4 justify-content-center">
+            <div class="col-4">
             <select className="form-control" 
                     onChange={ this.handlePageSizeChange } 
                     value={ this.props.pageSize || this.pageSizes[0] }> 
@@ -32,6 +33,8 @@ export class PaginationControls extends Component {
                     <option value={s} key={s}>{s} per page </option>
                 )}
             </select>
+            </div>
+            <div class="col-4">
             <select className="form-control"
                 onChange={ this.handleSortPropertyChange }
                 value={ this.props.sortKey || this.sortKeys[0] }>
@@ -41,6 +44,7 @@ export class PaginationControls extends Component {
                         </option>
                     )}
             </select>
+            </div>
         </div>
         
     </div>
