@@ -26,14 +26,14 @@ export class CartDetails extends Component {
                     removeFromCart={ this.props.removeFromCart } />
                 </tbody>
             </table>
-            <dic className="text-center">
+            <div className="text-center">
                 <Link className="btn btn-primary m-1" to="/shop">
                     Continute Shopping
                 </Link>
                 <Link className={ this.getLinkClasses() } to="/shop/checkout">
                     Checkout
                 </Link>
-            </dic>
+            </div>
         </div>
     }
 
