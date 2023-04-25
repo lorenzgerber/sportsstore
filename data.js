@@ -20,19 +20,19 @@ for (let i = 1; i <= 103; i++ ){
         id: i, name: `${fname} ${sname}`,
         email: faker.internet.email(fname, sname),
         address: faker.address.zipCode(), country: faker.address.country(),
-        shipped: faker.random.boolean(), products: []
+        shipped: faker.datatype.boolean(), products: []
     }
-    var productCount = faker.random.number({min: 1, max: 5});
+    var productCount = faker.datatype.number({min: 1, max: 5});
     var product_ids = [];
     while (product_ids.length < productCount){
-        var candidateId = faker.random.number({ min: 1, max: products.length});
+        var candidateId = faker.datatype.number({ min: 1, max: products.length});
         if (product_ids.indexOf(candidateId) === -1){
             product_ids.push(candidateId);
         }
     }
     for (let j = 0; j < productCount; j++ ){
         order.products.push({
-            quantity: faker.random.number({min: 1, max: 10}),
+            quantity: faker.datatype.number({min: 1, max: 10}),
                 product_id: product_ids[j]
         })
     }
