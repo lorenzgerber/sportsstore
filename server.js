@@ -4,7 +4,7 @@ const chokidar = require("chokidar");
 const cors = require("cors");
 const fs = require("fs");
 const { buildSchema } = require("graphql");
-const { graphqlHTTP } = require("express-graphql");
+const graphqlHTTP  = require("express-graphql");
 const queryResolvers = require("./serverQueriesResolver");
 const mutationResolvers = require("./serverMutationsResolver");
 
