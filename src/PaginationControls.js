@@ -25,7 +25,7 @@ export class PaginationControls extends Component {
                 navigate={ this.props.navigateToPage }/>
         </div>
         <div className="row m-4 justify-content-center">
-            <div class="col-4">
+            <div className="col-4">
             <select className="form-control" 
                     onChange={ this.handlePageSizeChange } 
                     value={ this.props.pageSize || this.pageSizes[0] }> 
@@ -34,7 +34,7 @@ export class PaginationControls extends Component {
                 )}
             </select>
             </div>
-            <div class="col-4">
+            <div className="col-4">
             <select className="form-control"
                 onChange={ this.handleSortPropertyChange }
                 value={ this.props.sortKey || this.sortKeys[0] }>
