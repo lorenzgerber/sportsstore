@@ -7,6 +7,7 @@ const { buildSchema } = require("graphql");
 const graphqlHTTP  = require("express-graphql");
 const queryResolvers = require("./serverQueriesResolver");
 const mutationResolvers = require("./serverMutationsResolver");
+const auth = require("./authMiddleware");
 
 
 const fileName = process.argv[2] || "./data.js"
@@ -32,7 +33,8 @@ const createServer = () => {
 }, 100) }
 createServer();
 app.use(cors());
-app.use(jsonServer.bodyParser)
+app.use(jsonServer.bodyParser);
+app.use(auth);
 app.use("/api", (req, resp, next) => router(req, resp, next));
 app.use("/graphql", (req, resp, next) => graph(req, resp, next));
 chokidar.watch(fileName).on("change", () => {
