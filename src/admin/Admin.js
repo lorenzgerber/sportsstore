@@ -21,9 +21,9 @@ export const Admin = authWrapper(class extends Component {
         super(props);
         this.client = new ApolloClient({
             uri: GraphQlUrl,
-            request: gqlopeoration => gqlopeoration.setContext({
+            request: gqloperation => gqloperation.setContext({
                 headers: {
-                    Authorization: `Bearer<$(this.props.webToken)>`
+                    Authorization: `Bearer<${this.props.webToken}>`
                 }
             })
         })

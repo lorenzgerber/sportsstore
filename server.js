@@ -16,6 +16,7 @@ let router = undefined;
 let graph = undefined;
 
 const app = express();
+
 const createServer = () => {
     delete require.cache[require.resolve(fileName)];
     setTimeout(() => {
